@@ -15,8 +15,8 @@ public class CountLanguagesStartNumbersMaksPtTest extends BaseTest {
         getDriver().findElement(By.xpath("//ul[@id='menu']/li/a[@href='/abc.html']")).click();
         getDriver().findElement(By.xpath("//a[@href='0.html']")).click();
 
-        List<WebElement> numbers = getDriver().findElements(By.xpath("//table[@id='category']/tbody/tr[@onmouseover]"));
+        List<WebElement> actualNumbers = getDriver().findElements(By.xpath("//table[@id='category']/tbody/tr[@onmouseover]"));
 
-        Assert.assertEquals(numbers.size(), 10);
+        Assert.assertEquals(actualNumbers.size(), 10);
     }
 }
