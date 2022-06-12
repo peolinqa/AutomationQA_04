@@ -14,36 +14,6 @@ public class Song99BottlesElenaNov686Test extends BaseTest {
     private String actualResult;
     private String expectedResult;
 
-    private WebElement menuBrowseLanguages() {
-        return getDriver().findElement(By.xpath(
-                "//body/div[@id='wrap']/div[@id='navigation']/li/a[@href='/abc.html']"));
-    }
-
-    private WebElement categoryDescription() {
-        return getDriver().findElement(By.xpath("//div[@id='main']/p[contains(text(), 'All')]"));
-    }
-
-
-    @Test //TC_12_01
-    public void testBrowseLanguagesLetterJ() {
-
-        //Открыть базовую страницу
-        //Нажать на пункт меню BROWSE LANGUAGES
-        //Нажать на подменю J
-        //Подтвердить, что пользователь видит текст
-        // “All languages starting with the letter J are shown, sorted by Language.”
-
-
-        getDriver().get(BASE_URL);
-        menuBrowseLanguages().click();
-        getDriver().findElement(By.linkText("J"));
-
-        actualResult = categoryDescription().getText();
-        expectedResult = "All languages starting with the letter J are shown, sorted by Language.";
-
-        Assert.assertEquals(actualResult, expectedResult);
-
-    }
 
     @Test //TC_12_04
     public void testMathematicaBrentonDataComment() {
