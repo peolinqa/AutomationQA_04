@@ -6,9 +6,11 @@ import org.openqa.selenium.WebElement;
 
 public class MPage {
 
-    private final By LAST_LANGUAGE = By.xpath("//table[@id='category']/tbody/tr[last()]/td/a");
-
     private WebDriver driver;
+
+    private final By M_PAGE = By.xpath("//a[@href='m.html']");
+    private final By MATHEMATICA_PAGE = By.xpath("//a[@href='language-mathematica-1090.html']");
+    private final By BRENTON_BOSTICK = By.xpath("//table[@style='margin: 7px; padding: 0;;']/tbody[1]/tr[2]/td[2]");
 
     public MPage(WebDriver existingDriver) {
 
@@ -20,13 +22,18 @@ public class MPage {
         return driver;
     }
 
-    public WebElement getLastLanguageInM() {
+    public WebElement MLanguagesPage() {
 
-        return getDriver().findElement(LAST_LANGUAGE);
+         return getDriver().findElement(M_PAGE);
     }
 
-    public String getLastLanguageInMText() {
+    public WebElement mathematicaPage() {
 
-        return getLastLanguageInM().getText();
+        return getDriver().findElement(MATHEMATICA_PAGE);
+    }
+
+    public WebElement BrentonBostick() {
+
+        return getDriver().findElement(BRENTON_BOSTICK);
     }
 }
