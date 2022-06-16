@@ -60,9 +60,9 @@ public class MainPage {
         return getDriver().findElement(SUBMIT_NEW_LANGUAGE);
     }
 
-    public void getSubmitNewLanguageMenuText() {
+    public String getSubmitNewLanguageMenuText() {
 
-        getSubmitNewLanguageMenu().getText();
+        return getSubmitNewLanguageMenu().getText();
     }
 
     public WebElement getH2Header() {
