@@ -8,6 +8,7 @@ public class SignGuestbookPage {
 
     private WebDriver driver;
 
+    private final By GUESTBOOK = By.xpath("//li/a[@href='/guestbookv2.html']");
     private final By SIGN_GUESTBOOK = By.xpath("//a[@href='./signv2.html']");
     private final By SUBMIT = By.xpath("//input[@type='submit']");
     private final By ERROR_MESSAGE = By.xpath("//div[@id='main']/p");
