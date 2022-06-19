@@ -29,6 +29,11 @@ public class SignGuestbookPage {
         return getDriver().findElement(SIGN_GUESTBOOK);
     }
 
+    public WebElement getGuestbookMenu() {
+
+        return getDriver().findElement(GUESTBOOK);
+    }
+
     public void getSignGuestbookMenuClick() {
         getSignGuestbookMenu().click();
     }
