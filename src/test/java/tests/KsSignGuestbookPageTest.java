@@ -6,14 +6,20 @@ import org.testng.annotations.Test;
 import pages.SignGuestbookPage;
 import runner.BaseTest;
 
+
 public class KsSignGuestbookPageTest extends BaseTest {
+
+    private static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
     @Test
     public void testSecurityCodeField() {
         String expectedResult = "Error: Error: Invalid security code.";
 
         SignGuestbookPage signGuestbookPage = new SignGuestbookPage(getDriver());
-        getDriver().get("http://www.99-bottles-of-beer.net/signv2.html");
+
+        getDriver().get(BASE_URL);
+        signGuestbookPage.getGuestbookMenu().click();
+        signGuestbookPage.getSignGuestbookMenuClick();
 
         getDriver().findElement(By.xpath
                 ("//form/p/input[@name='name']")).sendKeys("Ksenia");
