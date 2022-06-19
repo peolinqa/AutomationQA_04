@@ -29,6 +29,4 @@ public class TopRatedRealPage {
 
         getTopRatedRealPage().click();
     }
-
-
 }
