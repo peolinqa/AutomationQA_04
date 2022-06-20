@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
+import pages.TopListPage;
+import pages.TopListRealPage;
 import runner.BaseTest;
 
 public class TopListTest extends BaseTest {
@@ -20,6 +22,24 @@ public class TopListTest extends BaseTest {
         main.clickTopListMenu();
 
         String actualResult = getDriver().findElement(By.xpath("//div[@id='main']/h2")).getText();
+        Assert.assertEquals(actualResult,expectedResult);
+    }
+
+    @Test
+    public void testGoToTheTopRatedRealLanguages() {
+        String expectedResult = "Top Rated Real Languages";
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.clickTopListMenu();
+
+        TopListPage topListPage = new TopListPage(getDriver());
+        topListPage.clickMenuTopListReal();
+
+        TopListRealPage topListRealPage = new TopListRealPage(getDriver());
+        String actualResult = topListRealPage.getH2TableName();
+
         Assert.assertEquals(actualResult,expectedResult);
     }
 }
