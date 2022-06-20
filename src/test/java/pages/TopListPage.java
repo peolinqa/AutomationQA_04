@@ -10,6 +10,8 @@ public class TopListPage {
 
     private final By TOP_LIST_REAL_MENU = By.linkText("Top Rated Real");
     private final By TOP_LIST_ESOTERIC_MENU = By.xpath("//a[@href='./toplist_esoteric.html']");
+    private final By TOP_LIST_ASSEMBLY_MENU= By.xpath("//a[@href='./toplist_assembly.html']");
+
 
     public TopListPage(WebDriver existingDriver) {
 
@@ -29,13 +31,23 @@ public class TopListPage {
         getMenuTopListReal().click();
     }
 
-    public WebElement getTopEsotericPage() {
+    public WebElement getMenuTopEsoteric() {
 
         return getDriver().findElement(TOP_LIST_ESOTERIC_MENU);
     }
 
-    public void clickTopEsotericPage() {
+    public void clickMenuTopEsotericPage() {
 
-        getTopEsotericPage().click();
+        getMenuTopEsoteric().click();
+    }
+
+    public WebElement getMenuTopListAssembly() {
+
+        return getDriver().findElement(TOP_LIST_ASSEMBLY_MENU);
+    }
+
+    public void clickMenuTopListAssembly() {
+
+        getMenuTopListAssembly().click();
     }
 }
