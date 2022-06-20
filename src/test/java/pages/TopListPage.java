@@ -9,6 +9,7 @@ public class TopListPage {
     private WebDriver driver;
 
     private final By TOP_LIST_REAL_MENU = By.linkText("Top Rated Real");
+    private final By TOP_LIST_ESOTERIC_MENU = By.xpath("//a[@href='./toplist_esoteric.html']");
 
     public TopListPage(WebDriver existingDriver) {
 
@@ -26,5 +27,15 @@ public class TopListPage {
     public void clickMenuTopListReal() {
 
         getMenuTopListReal().click();
+    }
+
+    public WebElement getTopEsotericPage() {
+
+        return getDriver().findElement(TOP_LIST_ESOTERIC_MENU);
+    }
+
+    public void clickTopEsotericPage() {
+
+        getTopEsotericPage().click();
     }
 }

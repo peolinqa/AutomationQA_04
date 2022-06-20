@@ -4,13 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class TopRatedEsotericPage {
+public class TopListEsotericPage {
 
     private WebDriver driver;
 
-    private final By TOP_RATED_ESOTERIC_MENU = By.xpath("//a[@href='./toplist_esoteric.html']");
-
-    public TopRatedEsotericPage (WebDriver existingDriver) {
+    public TopListEsotericPage(WebDriver existingDriver) {
 
         this.driver = existingDriver;
     }
@@ -18,15 +16,5 @@ public class TopRatedEsotericPage {
     protected WebDriver getDriver() {
 
         return driver;
-    }
-
-    public WebElement getTopRatedEsotericPage() {
-
-        return getDriver().findElement(TOP_RATED_ESOTERIC_MENU);
-    }
-
-    public void clickTopRatedEsotericPage() {
-
-        getTopRatedEsotericPage().click();
     }
 }
