@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
 import pages.TopListPage;
+import pages.TopListRealPage;
 import runner.BaseTest;
 
 public class TopListTest extends BaseTest {
@@ -36,7 +37,9 @@ public class TopListTest extends BaseTest {
         TopListPage topListPage = new TopListPage(getDriver());
         topListPage.clickMenuTopListReal();
 
-        String actualResult = getDriver().findElement(By.xpath("//div[@id='main']/h2")).getText();
+        TopListRealPage topListRealPage = new TopListRealPage(getDriver());
+        String actualResult = topListRealPage.getH2TableName();
+
         Assert.assertEquals(actualResult,expectedResult);
     }
 }
