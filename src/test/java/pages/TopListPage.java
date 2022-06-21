@@ -12,6 +12,7 @@ public class TopListPage {
     private final By TOP_LIST_ESOTERIC_MENU = By.xpath("//a[@href='./toplist_esoteric.html']");
     private final By TOP_LIST_ASSEMBLY_MENU = By.xpath("//a[@href='./toplist_assembly.html']");
     private final By TOP_LIST_TOPHITS_MENU = By.xpath("//a[@href='./tophits.html']");
+    private final By NEW_LANGUAGES_THIS_MONTH_MENU = By.xpath("//a[@href='./toplist_newlanguagesthismonth.html']");
 
     public TopListPage(WebDriver existingDriver) {
 
@@ -59,5 +60,15 @@ public class TopListPage {
     public void clickMenuTopHits() {
 
         getMenuTopHits().click();
+    }
+
+    public WebElement getMenuNewLanguagesThisMonth() {
+
+        return getDriver().findElement(NEW_LANGUAGES_THIS_MONTH_MENU);
+    }
+
+    public void clickMenuNewLanguagesThisMonth() {
+
+        getMenuNewLanguagesThisMonth().click();
     }
 }
