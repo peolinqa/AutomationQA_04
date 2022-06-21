@@ -8,6 +8,8 @@ public class TopListEsotericPage {
 
     private WebDriver driver;
 
+    private final By H2_TABLE_NAME_ESOTERIC = By.xpath("//div[@id='main']/h2");
+
     public TopListEsotericPage(WebDriver existingDriver) {
 
         this.driver = existingDriver;
@@ -16,5 +18,15 @@ public class TopListEsotericPage {
     protected WebDriver getDriver() {
 
         return driver;
+    }
+
+    public WebElement getH2TableEsoteric() {
+
+        return getDriver().findElement(H2_TABLE_NAME_ESOTERIC);
+    }
+
+    public String getH2TableEsotericName() {
+
+        return getH2TableEsoteric().getText();
     }
 }
