@@ -4,10 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.MainPage;
-import pages.TopListEsotericPage;
-import pages.TopListPage;
-import pages.TopListRealPage;
+import pages.*;
 import runner.BaseTest;
 
 public class TopListTest extends BaseTest {
@@ -59,6 +56,24 @@ public class TopListTest extends BaseTest {
 
         TopListEsotericPage topListEsotericPage = new TopListEsotericPage(getDriver());
         String actualResult = topListEsotericPage.getH2TableEsotericName();
+
+        Assert.assertEquals(actualResult,expectedResult);
+    }
+
+    @Test
+    public void testGoToTheTopRatedAssemblyLanguages() {
+        String expectedResult = "Top Rated Assembly Languages";
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.clickTopListMenu();
+
+        TopListPage topListPage = new TopListPage(getDriver());
+        topListPage.clickMenuTopListAssembly();
+
+        TopListAssemblyPage topListAssemblyPage = new TopListAssemblyPage(getDriver());
+        String actualResult = topListAssemblyPage.getH2TableAssemblyName();
 
         Assert.assertEquals(actualResult,expectedResult);
     }
