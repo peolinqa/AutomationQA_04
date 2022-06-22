@@ -1,9 +1,11 @@
 package tests;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.MainPage;
+import pages.TopListEsotericPage;
 import pages.TopListPage;
 import pages.TopListRealPage;
 import runner.BaseTest;
@@ -39,6 +41,24 @@ public class TopListTest extends BaseTest {
 
         TopListRealPage topListRealPage = new TopListRealPage(getDriver());
         String actualResult = topListRealPage.getH2TableName();
+
+        Assert.assertEquals(actualResult,expectedResult);
+    }
+
+    @Test
+    public void testGoToTheTopRatedEsotericLanguages() {
+        String expectedResult = "Top Rated Esoteric Languages";
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.clickTopListMenu();
+
+        TopListPage topListPage = new TopListPage(getDriver());
+        topListPage.clickMenuTopEsotericPage();
+
+        TopListEsotericPage topListEsotericPage = new TopListEsotericPage(getDriver());
+        String actualResult = topListEsotericPage.getH2TableEsotericName();
 
         Assert.assertEquals(actualResult,expectedResult);
     }
