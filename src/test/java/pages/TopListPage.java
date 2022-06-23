@@ -79,7 +79,7 @@ public class TopListPage {
 
     public WebElement getMenuNewComments() {
 
-        return getDriver().findElement(NEW_LANGUAGES_THIS_MONTH_MENU);
+        return getDriver().findElement(NEW_COMMENTS_MENU);
     }
 
     public void clickMenuNewComments() {
