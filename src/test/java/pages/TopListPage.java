@@ -13,7 +13,7 @@ public class TopListPage {
     private final By TOP_LIST_ASSEMBLY_MENU = By.xpath("//a[@href='./toplist_assembly.html']");
     private final By TOP_LIST_TOPHITS_MENU = By.xpath("//a[@href='./tophits.html']");
     private final By NEW_LANGUAGES_THIS_MONTH_MENU = By.xpath("//a[@href='./toplist_newlanguagesthismonth.html']");
-
+    private final By NEW_COMMENTS_MENU = By.linkText("New Comments");
     public TopListPage(WebDriver existingDriver) {
 
         this.driver = existingDriver;
