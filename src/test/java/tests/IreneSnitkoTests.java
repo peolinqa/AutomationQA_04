@@ -16,9 +16,9 @@ public class IreneSnitkoTests extends BaseTest {
 
         StartPage start = new StartPage(getDriver());
 
-        start.getHistoryMenuClick();
+        start.clickInfoSubmenu();
 
-        HistoryPage history = new HistoryPage(getDriver());
+        InfoPage history = new InfoPage(getDriver());
 
         Assert.assertEquals(history.getCodeOfLanguageBasic(), history.createBasicCode());
     }
