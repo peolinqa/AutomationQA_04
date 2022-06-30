@@ -61,6 +61,21 @@ public class TatianaPTest extends BaseTest {
     }
 
     @Test
+    public void testVerifyNumberOfLanguagesForJavaSearch(){
+        getDriver().get(BASE_URL);
+        int expectedResult = 14;
+
+        MainPage mainPage = new MainPage(getDriver());
+        mainPage.clickSearchMenu();
+
+        SearchPage searchPage = new SearchPage(getDriver());
+        searchPage.getSearchBoxSendKey("Java");
+        searchPage.clickSubmitSearch();
+
+        Assert.assertEquals(searchPage.countLanguagesJavaSearch(), expectedResult);
+    }
+
+    @Test
     public void testVerifyH2HeaderOnInfoPage(){
         String expectedResult = "History";
 
