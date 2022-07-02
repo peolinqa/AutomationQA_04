@@ -38,6 +38,25 @@ public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
         Assert.assertEquals(startPage.getHistoricInformationLinkText(), "historic information");
     }
 
+    
+    public static String getText(String text) {
+
+        return text;
+    }
+
+    @Test
+    public void testCheckSubmenuPrivacyIsClickable(){
+        String expectedResult = "Privacy";
+
+        getDriver().get(BASE_URL);
+
+        StartPage startPage = new StartPage(getDriver());
+
+        String actualResult = startPage.getImpressumSubmenuText();
+
+        Assert.assertEquals(actualResult,expectedResult);
+    }
+
   public static String getTextljHEFJEJLFVJLWEVFWVFEF(String text, int number) {
 
         number += number;
