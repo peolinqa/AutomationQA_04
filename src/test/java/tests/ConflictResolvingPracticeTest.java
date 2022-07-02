@@ -2,6 +2,8 @@ package tests;
 
 import org.testng.annotations.Test;
 import pages.MainPage;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.StartPage;
@@ -23,6 +25,20 @@ public static int CountTextP(int n) {
    }
 
 public static String getTextljHEFJEJLFVJLWEVFWVFEF(String text, int number) {
+   
+   private final By H2_TITLE_A = By.xpath("//div[@id='main']/h2");
+
+    public WebElement getH2PageA() {
+
+        return getDriver().findElement(H2_TITLE_A);
+    }
+
+  public static String getText(String text) {
+   
+   return text;
+  }
+
+    public static String getText5(String text) {
 
   return text;
   }
@@ -39,7 +55,9 @@ public static String getText5(String text) {
     public void testHistoricInformationLinkText() {
         getDriver().get(BASE_URL);
 
-        StartPage startPage = new StartPage(getDriver());
+        
+  
+      StartPage startPage = new StartPage(getDriver());
 
         Assert.assertEquals(startPage.getHistoricInformationLinkText(), "historic information");
     }
@@ -49,4 +67,5 @@ public static String getText5(String text) {
 
     return text;
     }
+
 }
