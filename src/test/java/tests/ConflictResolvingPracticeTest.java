@@ -12,6 +12,28 @@ import runner.BaseTest;
 public class ConflictResolvingPracticeTest extends BaseTest {
 
 
+private static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
+
+    public void testHistoricInformationLinkText2() {
+        getDriver().get(BASE_URL);
+
+        StartPage startPage = new StartPage(getDriver());
+
+        Assert.assertEquals(startPage.getHistoricInformationLinkText(), "historic information");
+    }
+
+    @Test
+    public void testHistoricInformationLinkText() {
+        getDriver().get(BASE_URL);
+
+//    Int
+
+      StartPage startPage = new StartPage(getDriver());
+
+        Assert.assertEquals(startPage.getHistoricInformationLinkText(), "historic information");
+    }
+
+ 
   public static String getTextljHEFJEJLFVJLWEVFWVFEF(String text, int number) {
   
   number += number;
@@ -19,7 +41,6 @@ public class ConflictResolvingPracticeTest extends BaseTest {
   return text;  
  }
 
-public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
    public static int CountTextP(int n) {
 
@@ -28,10 +49,31 @@ public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
 
     public static String getTextFourFive(String text) {
-
+    
         return text;
     }
 
+    @Test
+    public void testCheckSubmenuPrivacyIsClickable(){
+        String expectedResult = "Privacy";
+
+        getDriver().get(BASE_URL);
+
+        StartPage startPage = new StartPage(getDriver());
+
+        String actualResult = startPage.getImpressumSubmenuText();
+
+        Assert.assertEquals(actualResult,expectedResult);
+    }
+
+
+    public static int getText9(String text) {
+
+        int length = text.length();
+        
+        return length;
+    }
+    
     private final By H2_TITLE_A = By.xpath("//div[@id='main']/h2");
 
     public WebElement getH2PageA() {
@@ -40,6 +82,7 @@ public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
     }
 
   public static String getText(String text) {
+  
    return text;
   }
 
