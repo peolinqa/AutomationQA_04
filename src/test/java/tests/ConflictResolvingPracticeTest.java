@@ -21,6 +21,14 @@ public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
         return text.concat("Text2").concat("Text3");
 }
 
+    public void testHistoricInformationLinkText2() {
+        getDriver().get(BASE_URL);
+
+        StartPage startPage = new StartPage(getDriver());
+
+        Assert.assertEquals(startPage.getHistoricInformationLinkText(), "historic information");
+    }
+
     @Test
     public void testHistoricInformationLinkText() {
         getDriver().get(BASE_URL);
