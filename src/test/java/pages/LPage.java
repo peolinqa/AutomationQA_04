@@ -24,7 +24,7 @@ public class LPage {
         return driver;
     }
 
-    public WebElement getH2Header(){
+    public WebElement getH2Header() {
 
         return getDriver().findElement(H2_HEADER);
     }
@@ -33,11 +33,11 @@ public class LPage {
 
         return element.getText();
     }
-    public void clickLSubmenu(){
+    public void clickLSubmenu() {
         getDriver().findElement(L_SUBMENU).click();
     }
 
-    public void clickLanguageL33t(){
+    public void clickLanguageL33t() {
         getDriver().findElement(LANGUAGE_L33T).click();
     }
 }
