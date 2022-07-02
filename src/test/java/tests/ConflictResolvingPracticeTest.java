@@ -15,16 +15,28 @@ public static String getText(String text) {
   return text;
   }
 
+public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
+
+public static int CountTextP(int n) {
+
+   return n;
+   }
+
 public static String getTextljHEFJEJLFVJLWEVFWVFEF(String text, int number) {
+
+  return text;
   }
 public static String getText5(String text) {
 
    String str = null;
 
    return text.concat("Text2").concat("Text3");
-    }
+   }
 
  public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
+        
+   return text.concat("Text2").concat("Text3");
+   }
 
     @Test
     public void testHistoricInformationLinkText() {
