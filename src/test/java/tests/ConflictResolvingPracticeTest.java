@@ -1,30 +1,27 @@
 package tests;
 
-
 import org.testng.annotations.Test;
 import pages.MainPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.StartPage;
-
 import runner.BaseTest;
 
 public class ConflictResolvingPracticeTest extends BaseTest {
+  }
 
-
-
-  public static String getText(String text) {
+public static String getText(String text) {
     
   return text;
   }
 
 public static String getTextljHEFJEJLFVJLWEVFWVFEF(String text, int number) {
+  }
+public static String getText5(String text) {
 
-  public static String getText5(String text) {
+   String str = null;
 
-    String str = null;
-
-    return text.concat("Text2").concat("Text3");
+   return text.concat("Text2").concat("Text3");
     }
 
  public static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
@@ -37,13 +34,10 @@ public static String getTextljHEFJEJLFVJLWEVFWVFEF(String text, int number) {
 
         Assert.assertEquals(startPage.getHistoricInformationLinkText(), "historic information");
     }
-
-
   public static String getTextljHEFJEJLFVJLWEVFWVFEF(String text, int number) {
 
-        number += number;
+    number += number;
 
-        return text;
+    return text;
     }
-
 }
