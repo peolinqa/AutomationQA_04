@@ -1,11 +1,15 @@
 package tests;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
 import pages.top_lists.*;
 import runner.BaseTest;
+
+import java.awt.*;
+import java.util.List;
 
 public class TopListTest extends BaseTest {
 
