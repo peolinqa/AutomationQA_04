@@ -114,4 +114,22 @@ public class TopListTest extends BaseTest {
 
         Assert.assertEquals(actualResult,expectedResult);
     }
+
+    @Test
+    public void testGoToTheNewcomments() {
+        String expectedResult = "New Comments";
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.clickTopListMenu();
+
+        TopListPage topListPage = new TopListPage(getDriver());
+        topListPage.clickNewCommentsSubmenu();
+
+        NewCommentsPage newCommentsPage = new NewCommentsPage(getDriver());
+        String actualResult = newCommentsPage.getTextH2Main();
+
+        Assert.assertEquals(actualResult,expectedResult);
+    }
 }
