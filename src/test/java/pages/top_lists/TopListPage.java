@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 public class TopListPage {
 
     private WebDriver driver;
@@ -91,5 +93,12 @@ public class TopListPage {
     public void clickNewCommentsSubmenu() {
 
         getNewCommentsSubmenu().click();
+    }
+
+    public Integer getCountTableALinks() {
+
+        List<WebElement> countLanguages = getDriver()
+                .findElements(ALL_LANGUAGES_IN_THE_TABLE_TOP_LIST_REAL_SUBMENU);
+        return countLanguages.size();
     }
 }
