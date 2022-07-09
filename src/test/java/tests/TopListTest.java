@@ -25,6 +25,21 @@ public class TopListTest extends BaseTest {
     }
 
     @Test
+    public void testCountOfLanguagesInTopRated() {
+        int expectedResult = 25;
+
+        getDriver().get(BASE_URL);
+
+        MainPage main = new MainPage(getDriver());
+        main.clickTopListMenu();
+
+        TopListPage topListPage = new TopListPage(getDriver());
+        int actualResult = topListPage.getCountTableALinks();
+
+        Assert.assertEquals(actualResult,expectedResult);
+    }
+
+    @Test
     public void testGoToTheTopRatedRealLanguages() {
         String expectedResult = "Top Rated Real Languages";
 
