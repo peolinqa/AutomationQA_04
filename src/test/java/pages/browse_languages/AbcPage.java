@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.BasePage;
+import pages.browse_languages.letters.RPage;
 import pages.browse_languages.letters.XPage;
 import pages.browse_languages.letters.YPage;
 import pages.browse_languages.letters.JPage;
@@ -114,9 +115,10 @@ public class AbcPage extends BasePage {
         return getDriver().findElement(R_SUBMENU);
     }
 
-    public void clickRSubmenu() {
-
+    public RPage clickRSubmenu() {
         getRSubmenu().click();
+
+        return new RPage(getDriver());
     }
 
     public WebElement getZSubmenu() {
