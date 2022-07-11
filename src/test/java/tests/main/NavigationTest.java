@@ -48,4 +48,36 @@ public class NavigationTest extends BaseTest {
         Assert.assertTrue(abc.getZeroSubmenu().isDisplayed());
         Assert.assertTrue(currentUrl.contains("0.html"));
     }
+    
+     @Test
+     public void testMenuSubmitNewLanguageText() {
+        final String expectedMenuText = "SUBMIT NEW LANGUAGE";
+
+        String actualMenuText =
+                openBaseURL()
+                        .getSubmitNewLanguageMenuText();
+
+        Assert.assertEquals(actualMenuText, expectedMenuText);
+    }
+
+    @Test
+    public void testMenuSubmitNewLanguageLinkText() {
+        final String expectedLinkText = "http://www.99-bottles-of-beer.net/submitnewlanguage.html";
+
+        String actualLinkText =
+                openBaseURL()
+                        .getSubmitNewLanguageMenu()
+                        .getAttribute("href");
+
+        Assert.assertEquals(actualLinkText, expectedLinkText);
+    }
+
+    @Test
+    public void testMenuSubmitNewLanguageNavigation() {
+        openBaseURL()
+                .clickSubmitNewLanguageMenu();
+
+        Assert.assertFalse(getDriver().getPageSource().isEmpty());
+        Assert.assertTrue(getDriver().getCurrentUrl().contains("submitnewlanguage"));
+   }
 }
