@@ -80,4 +80,16 @@ public class NavigationTest extends BaseTest {
         Assert.assertFalse(getDriver().getPageSource().isEmpty());
         Assert.assertTrue(getDriver().getCurrentUrl().contains("submitnewlanguage"));
    }
+
+    @Test
+    public void testMenuStartLinkText() {
+        final String expectedMenuStartLinkText = "http://www.99-bottles-of-beer.net/";
+
+        String actualMenuStartLinkText =
+                openBaseURL()
+                        .getStartMenu()
+                        .getAttribute("href");
+
+        Assert.assertEquals(actualMenuStartLinkText, expectedMenuStartLinkText);
+    }
 }
