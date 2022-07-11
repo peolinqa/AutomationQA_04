@@ -38,8 +38,7 @@ public class JTest extends BaseTest {
                 openBaseURL()
                         .clickBrowseLanguagesMenu()
                         .clickJSubmenu()
-                        .getStringTextThTags()
-                        .trim();
+                        .getTextStringThTags();
 
         Assert.assertEquals(actualTableHeaderText, expectedTableHeaderText);
     }
@@ -52,7 +51,7 @@ public class JTest extends BaseTest {
                 openBaseURL()
                         .clickBrowseLanguagesMenu()
                         .clickJSubmenu()
-                        .getQuantityTDLinks();
+                        .getCountTDLinks();
 
         Assert.assertEquals(actualQuantity, expectedQuantity);
     }

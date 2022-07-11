@@ -30,24 +30,24 @@ public class JPage extends _LettersPage {
         findElement(By.linkText(getLanguageFromTDLinks("JavaScript"))).click();
     }
 
-    public List<String> getH2HeaderAndPTagText(){
+    public List<String> getH2HeaderAndPTagText() {
 
         return List.of(getH2HeaderText(), getPTagText());
     }
 
     public int randomLanguage() {
 
-        return (int) (Math.random() * getQuantityTDLinks()) + 1;
+        return (int) (Math.random() * getCountTDLinks()) + 1;
     }
 
-    public int randomIndex(){
+    public int randomIndex() {
 
         return randomLanguage() - 1;
     }
 
-    public WebElement getRandomTr(){
+    public WebElement getRandomTr() {
 
-       return getTrTags().get(randomIndex());
+        return getTrTags().get(randomIndex());
     }
 
     public WebElement getRandomTDLinks(){
@@ -58,10 +58,10 @@ public class JPage extends _LettersPage {
      public String getTrText(String languageName) {
         StringBuilder actualResult = new StringBuilder();
 
-        for (String tr : getTrTagsText()){
-            if(tr.contains(languageName)){
+        for (String tr : getTextListTrTags()) {
+            if (tr.contains(languageName)) {
 
-               return actualResult.append(tr).toString();
+                return actualResult.append(tr).toString();
             }
         }
 
