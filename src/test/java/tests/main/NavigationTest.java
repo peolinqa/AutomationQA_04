@@ -80,4 +80,18 @@ public class NavigationTest extends BaseTest {
         Assert.assertFalse(getDriver().getPageSource().isEmpty());
         Assert.assertTrue(getDriver().getCurrentUrl().contains("submitnewlanguage"));
    }
+
+    @Test
+    public void testMenuStartNavigation() {
+        final String expectedMenuStartNavigation = "http://www.99-bottles-of-beer.net/";
+
+        openBaseURL()
+                .clickStartMenu();
+
+        Assert.assertFalse(getDriver().getPageSource().isEmpty());
+
+        String actualMenuStartNavigation = getDriver().getCurrentUrl();
+
+        Assert.assertEquals(actualMenuStartNavigation, expectedMenuStartNavigation);
+    }
 }
