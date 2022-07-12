@@ -130,4 +130,16 @@ public class NavigationTest extends BaseTest {
 
         Assert.assertEquals(actualMenuAbcText, expectedMenuAbcText);
     }
+
+    @Test
+    public void testMenuAbcLinkText() {
+        final String expectedMenuAbcLinkText = "http://www.99-bottles-of-beer.net/abc.html";
+
+        String actualMenuAbcLinkText =
+                openBaseURL()
+                        .getBrowseLanguagesMenu()
+                        .getAttribute("href");
+
+        Assert.assertEquals(actualMenuAbcLinkText, expectedMenuAbcLinkText);
+    }
 }
