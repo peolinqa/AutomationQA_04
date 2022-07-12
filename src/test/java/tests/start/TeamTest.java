@@ -54,4 +54,17 @@ public class TeamTest extends BaseTest {
 
         Assert.assertEquals(actualH3TeamNamesText, expectedH3TeamNamesText);
     }
+
+    @Test
+    public void testClickabilityOfTeamPageStsSynfloodDeLink() {
+        final String expectedTeamPageStsSynfloodDeLink = "http://sts.synflood.de/";
+
+        String actualTeamPageStsSynfloodDeLink = openBaseURL()
+                .clickStartMenu()
+                .clickTeamSubmenu()
+                .clickStefanSchelerLink()
+                .getDriver().getCurrentUrl();
+
+        Assert.assertEquals(actualTeamPageStsSynfloodDeLink, expectedTeamPageStsSynfloodDeLink);
+    }
 }
