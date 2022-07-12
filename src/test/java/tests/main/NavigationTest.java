@@ -51,11 +51,12 @@ public class NavigationTest extends BaseTest {
     
      @Test
      public void testMenuSubmitNewLanguageText() {
-        final String expectedMenuText = "SUBMIT NEW LANGUAGE";
+        final String expectedMenuText = "Submit new Language".toLowerCase();
 
         String actualMenuText =
                 openBaseURL()
-                        .getSubmitNewLanguageMenuText();
+                        .getSubmitNewLanguageMenuText().
+                        toLowerCase();
 
         Assert.assertEquals(actualMenuText, expectedMenuText);
     }
@@ -80,7 +81,31 @@ public class NavigationTest extends BaseTest {
         Assert.assertFalse(getDriver().getPageSource().isEmpty());
         Assert.assertTrue(getDriver().getCurrentUrl().contains("submitnewlanguage"));
    }
+   
+   @Test
+    public void testMenuStartText() {
+        final String expectedMenuStartText = "Start";
 
+        String actualMenuStartText =
+                openBaseURL()
+                        .getStartMenu()
+                        .getText();
+
+        Assert.assertEquals(actualMenuStartText, expectedMenuStartText.toUpperCase());
+    }
+
+    @Test
+    public void testMenuStartLinkText() {
+        final String expectedMenuStartLinkText = "http://www.99-bottles-of-beer.net/";
+
+        String actualMenuStartLinkText =
+                openBaseURL()
+                        .getStartMenu()
+                        .getAttribute("href");
+
+        Assert.assertEquals(actualMenuStartLinkText, expectedMenuStartLinkText);
+    }
+    
     @Test
     public void testMenuStartNavigation() {
         final String expectedMenuStartNavigation = "http://www.99-bottles-of-beer.net/";
@@ -88,10 +113,9 @@ public class NavigationTest extends BaseTest {
         openBaseURL()
                 .clickStartMenu();
 
-        Assert.assertFalse(getDriver().getPageSource().isEmpty());
-
         String actualMenuStartNavigation = getDriver().getCurrentUrl();
 
+        Assert.assertFalse(getDriver().getPageSource().isEmpty());
         Assert.assertEquals(actualMenuStartNavigation, expectedMenuStartNavigation);
     }
 }
