@@ -118,4 +118,16 @@ public class NavigationTest extends BaseTest {
         Assert.assertFalse(getDriver().getPageSource().isEmpty());
         Assert.assertEquals(actualMenuStartNavigation, expectedMenuStartNavigation);
     }
+
+    @Test
+    public void testMenuAbcText() {
+        final String expectedMenuAbcText = "Browse Languages".toUpperCase();
+
+        String actualMenuAbcText =
+                openBaseURL()
+                        .getBrowseLanguagesMenu()
+                        .getText();
+
+        Assert.assertEquals(actualMenuAbcText, expectedMenuAbcText);
+    }
 }
