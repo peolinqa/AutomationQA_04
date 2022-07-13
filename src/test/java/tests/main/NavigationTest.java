@@ -155,4 +155,16 @@ public class NavigationTest extends BaseTest {
         Assert.assertFalse(getDriver().getPageSource().isEmpty());
         Assert.assertEquals(actualMenuAbcNavigation, expectedMenuAbcNavigation);
     }
+
+    @Test
+    public void testMenuSearchText() {
+        final String expectedMenuSearchText = "Search Languages".toUpperCase();
+
+        String actualMenuSearchText =
+                openBaseURL()
+                        .getSearchMenu()
+                        .getText();
+
+        Assert.assertEquals(actualMenuSearchText, expectedMenuSearchText);
+    }
 }
