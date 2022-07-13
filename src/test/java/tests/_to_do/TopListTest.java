@@ -12,37 +12,6 @@ public class TopListTest extends BaseTest {
     private static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
     @Test
-    public void testGoToTheTopRatedEsotericLanguages() {
-        String expectedResult = "Top Rated Esoteric Languages";
-
-        String actualResult =
-                openBaseURL().
-                        clickTopListMenu().
-                        clickTopListEsotericSubmenu().
-                        getH2TableEsotericName();
-
-        Assert.assertEquals(actualResult, expectedResult);
-    }
-
-    @Test
-    public void testGoToTheTopRatedAssemblyLanguages() {
-        String expectedResult = "Top Rated Assembly Languages";
-
-        getDriver().get(BASE_URL);
-
-        MainPage main = new MainPage(getDriver());
-        main.clickTopListMenu();
-
-        TopListPage topListPage = new TopListPage(getDriver());
-        topListPage.clickTopListAssemblySubmenu();
-
-        TopListAssemblyPage topListAssemblyPage = new TopListAssemblyPage(getDriver());
-        String actualResult = topListAssemblyPage.getH2TableAssemblyName();
-
-        Assert.assertEquals(actualResult, expectedResult);
-    }
-
-    @Test
     public void testGoToTheTopHits() {
         String expectedResult = "Top Hits";
 

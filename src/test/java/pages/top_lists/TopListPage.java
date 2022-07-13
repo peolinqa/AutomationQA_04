@@ -57,9 +57,11 @@ public class TopListPage extends BasePage {
         return getDriver().findElement(TOP_LIST_ASSEMBLY_SUBMENU);
     }
 
-    public void clickTopListAssemblySubmenu() {
+    public TopListAssemblyPage clickTopListAssemblySubmenu() {
 
         getTopListAssemblySubmenu().click();
+
+        return new TopListAssemblyPage(getDriver());
     }
 
     public WebElement getTopHitsSubmenu() {
