@@ -18,5 +18,4 @@ public class TophitsTest extends BaseTest {
 
         Assert.assertEquals(actualResult, expectedResult);
     }
-
 }
