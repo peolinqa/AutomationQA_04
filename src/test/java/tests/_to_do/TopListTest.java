@@ -12,56 +12,14 @@ public class TopListTest extends BaseTest {
     private static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
     @Test
-    public void testGoToTheTopRated() {
-        String expectedResult = "Top Rated";
-
-        String actualResult =
-                openBaseURL().
-                        clickTopListMenu().
-                        getNameH2HeaderTopList();
-
-        Assert.assertEquals(actualResult, expectedResult);
-    }
-
-    @Test
-    public void testCountOfLanguagesInTopRated() {
-        int expectedResult = 25;
-
-        int actualResult =
-                openBaseURL().
-                        clickTopListMenu().
-                        getCountTableLinks();
-
-        Assert.assertEquals(actualResult, expectedResult);
-    }
-
-    @Test
-    public void testGoToTheTopRatedRealLanguages() {
-        String expectedResult = "Top Rated Real Languages";
-
-        String actualResult =
-                openBaseURL().
-                        clickTopListMenu().
-                        clickTopListRealSubmenu().
-                        getTextH2Header();
-
-        Assert.assertEquals(actualResult, expectedResult);
-    }
-
-    @Test
     public void testGoToTheTopRatedEsotericLanguages() {
         String expectedResult = "Top Rated Esoteric Languages";
 
-        getDriver().get(BASE_URL);
-
-        MainPage main = new MainPage(getDriver());
-        main.clickTopListMenu();
-
-        TopListPage topListPage = new TopListPage(getDriver());
-        topListPage.clickTopListEsotericSubmenu();
-
-        TopListEsotericPage topListEsotericPage = new TopListEsotericPage(getDriver());
-        String actualResult = topListEsotericPage.getH2TableEsotericName();
+        String actualResult =
+                openBaseURL().
+                        clickTopListMenu().
+                        clickTopListEsotericSubmenu().
+                        getH2TableEsotericName();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
