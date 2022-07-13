@@ -45,9 +45,11 @@ public class TopListPage extends BasePage {
         return getDriver().findElement(TOP_LIST_ESOTERIC_SUBMENU);
     }
 
-    public void clickTopListEsotericSubmenu() {
+    public TopListEsotericPage clickTopListEsotericSubmenu() {
 
         getTopListEsotericSubmenu().click();
+
+        return new TopListEsotericPage(getDriver());
     }
 
     public WebElement getTopListAssemblySubmenu() {
