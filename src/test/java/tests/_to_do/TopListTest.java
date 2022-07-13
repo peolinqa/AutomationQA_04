@@ -12,33 +12,14 @@ public class TopListTest extends BaseTest {
     private static final String BASE_URL = "http://www.99-bottles-of-beer.net/";
 
     @Test
-    public void testGoToTheTopHits() {
-        final String expectedResult = "Top Hits";
+    public void testGoToTheNewLanguagesThisMonth() {
+        final String expectedResult = "New Languages this month";
 
         String actualResult =
                 openBaseURL()
-                        .clickTopListMenu()
-                        .clickTopHitsSubmenu()
-                        .getH2TableTopHitsName();
-
-        Assert.assertEquals(actualResult, expectedResult);
-    }
-
-    @Test
-    public void testGoToTheNewLanguagesThisMonth() {
-        String expectedResult = "New Languages this month";
-
-        getDriver().get(BASE_URL);
-
-        MainPage main = new MainPage(getDriver());
-        main.clickTopListMenu();
-
-        TopListPage topListPage = new TopListPage(getDriver());
-        topListPage.clickNewLanguagesThisMonthSubmenu();
-
-        TopListNewLanguagesThisMonthPage topListNewLanguagesThisMonthPage =
-                new TopListNewLanguagesThisMonthPage(getDriver());
-        String actualResult = topListNewLanguagesThisMonthPage.getH2TableNewLanguagesName();
+                .clickTopListMenu()
+                        .clickNewLanguagesThisMonthSubmenu()
+                        .getH2TableNewLanguagesName();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
