@@ -85,9 +85,11 @@ public class TopListPage extends BasePage {
         return getDriver().findElement(NEW_LANGUAGES_THIS_MONTH_SUBMENU);
     }
 
-    public void clickNewLanguagesThisMonthSubmenu() {
+    public TopListNewLanguagesThisMonthPage clickNewLanguagesThisMonthSubmenu() {
 
         getNewLanguagesThisMonthSubmenu().click();
+
+        return new TopListNewLanguagesThisMonthPage(getDriver());
     }
 
     public WebElement getNewCommentsSubmenu() {
