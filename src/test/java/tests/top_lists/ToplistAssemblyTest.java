@@ -8,7 +8,7 @@ public class ToplistAssemblyTest extends BaseTest {
 
     @Test
     public void testGoToTheTopRatedAssemblyLanguages() {
-        String expectedResult = "Top Rated Assembly Languages";
+        final String expectedResult = "Top Rated Assembly Languages";
 
         String actualResult =
                 openBaseURL()

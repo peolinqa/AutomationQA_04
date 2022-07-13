@@ -7,22 +7,22 @@ import runner.BaseTest;
 public class TopListRealTest extends BaseTest {
 
     @Test
-    public void testH2HeaderText(){
-       final  String expectedText = "Top Rated Real Languages";
+    public void testH2HeaderText() {
+        final String expectedText = "Top Rated Real Languages";
 
-       String actualText =
+        String actualText =
                 openBaseURL()
                         .clickTopListMenu()
                         .clickTopListRealSubmenu()
                         .getTextH2Header()
                         .trim();
 
-        Assert.assertEquals(actualText,expectedText);
+        Assert.assertEquals(actualText, expectedText);
     }
 
     @Test
-    public void testH2HeaderColor(){
-        final  String expectedColor = "rgba(27, 101, 28, 1)";
+    public void testH2HeaderColor() {
+        final String expectedColor = "rgba(27, 101, 28, 1)";
 
         String actualColor =
                 openBaseURL()
@@ -31,6 +31,6 @@ public class TopListRealTest extends BaseTest {
                         .getH2Header()
                         .getCssValue("color");
 
-        Assert.assertEquals(actualColor,expectedColor);
+        Assert.assertEquals(actualColor, expectedColor);
     }
 }
