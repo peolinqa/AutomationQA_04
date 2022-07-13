@@ -105,7 +105,7 @@ public class OlgaSafMenuStartPageTest extends BaseTest {
     }
 
 
-    @Test
+   
     public void testSubmenuAbcTitle()  {
         String expectedResult = "A";
 
@@ -137,5 +137,6 @@ public class OlgaSafMenuStartPageTest extends BaseTest {
         String actualResult = getDriver().findElement(
                 By.xpath("//td[@bgcolor='#efefef']/a[text()='Algol60']")).getText();
         Assert.assertEquals(actualResult, expectedResult);
+        
     }
 }
