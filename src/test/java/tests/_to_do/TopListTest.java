@@ -13,18 +13,13 @@ public class TopListTest extends BaseTest {
 
     @Test
     public void testGoToTheTopHits() {
-        String expectedResult = "Top Hits";
+        final String expectedResult = "Top Hits";
 
-        getDriver().get(BASE_URL);
-
-        MainPage main = new MainPage(getDriver());
-        main.clickTopListMenu();
-
-        TopListPage topListPage = new TopListPage(getDriver());
-        topListPage.clickTopHitsSubmenu();
-
-        TopListTopHitsPage topListTopHitsPage = new TopListTopHitsPage(getDriver());
-        String actualResult = topListTopHitsPage.getH2TableTopHitsName();
+        String actualResult =
+                openBaseURL()
+                        .clickTopListMenu()
+                        .clickTopHitsSubmenu()
+                        .getH2TableTopHitsName();
 
         Assert.assertEquals(actualResult, expectedResult);
     }
