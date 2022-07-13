@@ -8,7 +8,7 @@ public class ToplistEsotericTest extends BaseTest {
 
     @Test
     public void testGoToTheTopRatedEsotericLanguages() {
-        String expectedResult = "Top Rated Esoteric Languages";
+        final String expectedResult = "Top Rated Esoteric Languages";
 
         String actualResult =
                 openBaseURL().
