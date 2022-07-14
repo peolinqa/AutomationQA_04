@@ -20,6 +20,11 @@ public class LanguageMathematicaPage extends _LanguagesPage {
         return getDriver().findElement(TD_TABLE_BRENTON_BOSTICK);
     }
 
+    public String getBrentonBostickText () {
+
+        return getText(getTdTableBrentonBostick());
+    }
+  
     public String textOfAuthor() {
 
         return getTdTableBrentonBostick().getText();

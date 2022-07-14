@@ -58,6 +58,7 @@ public class AbcPage extends BasePage {
     }
 
     public MPage clickMSubmenu() {
+
         getMSubmenu().click();
 
         return new MPage(getDriver());
