@@ -179,4 +179,17 @@ public class NavigationTest extends BaseTest {
 
         Assert.assertEquals(actualMenuSearchLinkText, expectedMenuSearchLinkText);
     }
+
+    @Test
+    public void testMenuSearchNavigation() {
+        final String expectedMenuSearchNavigation = "http://www.99-bottles-of-beer.net/search.html";
+
+        openBaseURL()
+                .clickSearchMenu();
+
+        String actualMenuSearchNavigation = getDriver().getCurrentUrl();
+
+        Assert.assertFalse(getDriver().getPageSource().isEmpty());
+        Assert.assertEquals(actualMenuSearchNavigation, expectedMenuSearchNavigation);
+    }
 }
