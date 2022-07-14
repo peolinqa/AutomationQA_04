@@ -216,4 +216,17 @@ public class NavigationTest extends BaseTest {
 
         Assert.assertEquals(actualMenuTopListLinkText, expectedMenuTopListLinkText);
     }
+
+    @Test
+    public void testMenuTopListNavigation() {
+        final String expectedMenuTopListNavigation = "http://www.99-bottles-of-beer.net/toplist.html";
+
+        openBaseURL()
+                .clickTopListMenu();
+
+        String actualMenuTopListNavigation = getDriver().getCurrentUrl();
+
+        Assert.assertFalse(getDriver().getPageSource().isEmpty());
+        Assert.assertEquals(actualMenuTopListNavigation, expectedMenuTopListNavigation);
+    }
 }
