@@ -137,6 +137,7 @@ public class MainPage extends BasePage {
     }
 
     public TopListPage clickTopListMenu(){
+
         getTopListMenu().click();
 
         return new TopListPage(getDriver());

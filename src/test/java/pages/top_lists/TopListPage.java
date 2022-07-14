@@ -8,7 +8,7 @@ import pages.BasePage;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TopListPage extends BasePage {
+public class TopListPage extends _TopPage {
 
     private final By H2_TABLE_NAME_TOP_LIST = By.xpath("//div[@id='main']/h2");
     private final By TOP_LIST_REAL_SUBMENU = By.linkText("Top Rated Real");
@@ -66,6 +66,7 @@ public class TopListPage extends BasePage {
     }
 
     public TopListTopHitsPage clickTopHitsSubmenu() {
+
         clickWebElement(getTopHitsSubmenu());
 
         return new TopListTopHitsPage(getDriver());
