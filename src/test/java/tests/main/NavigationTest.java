@@ -192,4 +192,16 @@ public class NavigationTest extends BaseTest {
         Assert.assertFalse(getDriver().getPageSource().isEmpty());
         Assert.assertEquals(actualMenuSearchNavigation, expectedMenuSearchNavigation);
     }
+
+    @Test
+    public void testMenuTopListText() {
+        final String expectedMenuTopListText = "Top Lists".toUpperCase();
+
+        String actualMenuTopListText =
+                openBaseURL()
+                        .getTopListMenu()
+                        .getText();
+
+        Assert.assertEquals(actualMenuTopListText, expectedMenuTopListText);
+    }
 }
