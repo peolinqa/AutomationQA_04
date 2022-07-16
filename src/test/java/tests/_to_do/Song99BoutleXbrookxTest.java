@@ -2,9 +2,8 @@ package tests._to_do;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.*;
-import pages.browse_languages.AbcPage;
 import pages.browse_languages.languages.LanguageJava3Page;
+import pages.browse_languages.letters.APage;
 import pages.browse_languages.letters.DPage;
 import pages.browse_languages.letters.JPage;
 import pages.start.ImpressumPage;
@@ -19,26 +18,17 @@ public class Song99BoutleXbrookxTest extends BaseTest {
     @Test
     public void testConfirmTableWithHeaders() {
 
-        getDriver().get(BASE_URL);
+        openBaseURL().clickBrowseLanguagesMenu();
 
-        MainPage main = new MainPage(getDriver());
-        main.clickBrowseLanguagesMenu();
+        APage a = new APage(getDriver());
 
-        AbcPage abc = new AbcPage(getDriver());
-
-        Assert.assertEquals(abc.getTitlesTable(), "Language, Author, Date, Comments, Rate");
+        Assert.assertEquals(a.getTitlesTable(), "Language, Author, Date, Comments, Rate");
     }
 
     @Test
     public void testVerifyCountVersionsJavaLanguages () {
 
-        getDriver().get(BASE_URL);
-
-        MainPage main = new MainPage(getDriver());
-        main.clickBrowseLanguagesMenu();
-
-        AbcPage abc = new AbcPage(getDriver());
-        abc.clickJSubmenu();
+        openBaseURL().clickBrowseLanguagesMenu().clickJSubmenu();
 
         JPage j = new JPage(getDriver());
         j.clickLinkLanguageJava3();
@@ -58,7 +48,7 @@ public class Song99BoutleXbrookxTest extends BaseTest {
 
         StartPage startPage = new StartPage(getDriver());
 
-        Assert.assertEquals(startPage.getImpressumSubmenuText(), "Privacy");
+        Assert.assertEquals(startPage.getPrivacySubmenuText(), "Privacy");
     }
 
     @Test
@@ -67,40 +57,28 @@ public class Song99BoutleXbrookxTest extends BaseTest {
         getDriver().get(BASE_URL);
 
         StartPage startPage = new StartPage(getDriver());
-        startPage.clickImpressumSubmenu();
+        startPage.clickPrivacySubmenu();
 
         ImpressumPage impressumPage = new ImpressumPage(getDriver());
 
         Assert.assertTrue(getDriver().getCurrentUrl().contains("impressum.html"));
-        Assert.assertEquals(impressumPage.getH2HeaderText(), "Privacy");
+        Assert.assertEquals(impressumPage.getH2MainText(), "Privacy");
     }
 
     @Test
     public void testVerifyH2TextDPage () {
 
-        getDriver().get(BASE_URL);
-
-        MainPage mainPage = new MainPage(getDriver());
-        mainPage.clickBrowseLanguagesMenu();
-
-        AbcPage abcPage = new AbcPage(getDriver());
-        abcPage.clickDSubmenu();
+        openBaseURL().clickBrowseLanguagesMenu().clickDSubmenu();
 
         DPage dPage = new DPage(getDriver());
 
-        Assert.assertEquals(dPage.getH2HeaderText(), "Category D");
+        Assert.assertEquals(dPage.getH2MainText(), "Category D");
     }
 
     @Test
     public void testVerifyDescriptionTextDPage () {
 
-        getDriver().get(BASE_URL);
-
-        MainPage mainPage = new MainPage(getDriver());
-        mainPage.clickBrowseLanguagesMenu();
-
-        AbcPage abcPage = new AbcPage(getDriver());
-        abcPage.clickDSubmenu();
+        openBaseURL().clickBrowseLanguagesMenu().clickDSubmenu();
 
         DPage dPage = new DPage(getDriver());
 

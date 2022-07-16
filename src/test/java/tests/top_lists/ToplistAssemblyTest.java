@@ -12,7 +12,7 @@ public class ToplistAssemblyTest extends BaseTest {
 
         String actualResult =
                 openBaseURL()
-                        .clickTopListMenu()
+                        .clickTopListsMenu()
                         .clickTopListAssemblySubmenu()
                         .getTextH2Header();
 
@@ -25,7 +25,7 @@ public class ToplistAssemblyTest extends BaseTest {
 
         int actualNumberOfLanguages =
                 openBaseURL()
-                        .clickTopListMenu()
+                        .clickTopListsMenu()
                         .clickTopListAssemblySubmenu()
                         .countTrTags();
 
