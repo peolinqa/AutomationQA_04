@@ -3,13 +3,14 @@ package pages.search_languages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pages.BasePage;
-import pages.MainPage;
-import pages.browse_languages.languages.LanguagePerl737Page;
+import pages.BaseTablePage;
+import pages.browse_languages.languages.Perl737Page;
+import pages.browse_languages.languages.LanguagesPage;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchPage extends MainPage {
+public class SearchPage extends BaseTablePage<LanguagesPage> {
 
     private final By SEARCH_SUBMENU = By.xpath("//ul[@id='submenu']/li/a[@href='./search.html']");
 
@@ -29,6 +30,11 @@ public class SearchPage extends MainPage {
     public SearchPage(WebDriver driver) {
 
         super(driver);
+    }
+
+    @Override
+    protected LanguagesPage createLangPage() {
+        return null;
     }
 
     public String getText(WebElement element) {
@@ -85,10 +91,10 @@ public class SearchPage extends MainPage {
         return getDriver().findElement(PERL_LANGUAGE);
     }
 
-    public LanguagePerl737Page clickPerlLanguage() {
+    public Perl737Page clickPerlLanguage() {
         getPerlLanguage().click();
 
-        return new LanguagePerl737Page(getDriver());
+        return new Perl737Page(getDriver());
     }
 
     public List<WebElement> getJavaATags() {
