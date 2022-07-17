@@ -17,6 +17,7 @@ public abstract class BaseTopListPage<LangPage> extends BaseTablePage<LangPage> 
     private final By NEW_COMMENTS_SUBMENU = By.linkText("New Comments");
 
     public BaseTopListPage(WebDriver driver) {
+
         super(driver);
     }
 
