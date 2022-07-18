@@ -32,7 +32,7 @@ public class AbcTest extends BaseTest {
     }
 
     @Test
-    public void testLinkTextZeroSubmenu(){
+    public void testLinkTextZeroSubmenu() {
         final String expectedLinkTextZeroSubmenu = "http://www.99-bottles-of-beer.net/0.html";
 
         String actualLinkTextZeroSubmenu =
@@ -46,7 +46,7 @@ public class AbcTest extends BaseTest {
 
     @Test
     public void testTableTitles() {
-        String expectedTableTitles = "Language, Author, Date, Comments, Rate" ;
+        String expectedTableTitles = "Language, Author, Date, Comments, Rate";
 
         String actualTableTitles =
                 openBaseURL()
@@ -67,5 +67,18 @@ public class AbcTest extends BaseTest {
 
         Assert.assertEquals(
                 actualResultAllNamesOfSubmenu, expectedResultAllNamesOfSubmenu);
+    }
+
+    @Test
+    public void testSubmitNewLanguageCategoryL() {
+        final String expectedResult = "Category L";
+
+        String actualResult =
+                openBaseURL()
+                        .clickBrowseLanguagesMenu()
+                        .clickLSubmenu()
+                        .getH2MainText();
+
+        Assert.assertEquals(actualResult, expectedResult);
     }
 }

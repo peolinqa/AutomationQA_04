@@ -18,4 +18,17 @@ public class ToplistEsotericTest extends BaseTest {
 
         Assert.assertEquals(actualResult, expectedResult);
     }
+
+    @Test
+    public void testNumberOfLanguagesEsotericLanguages() {
+        final int expectedNumberOfLanguages = 25;
+
+        int actualNumberOfLanguages =
+                openBaseURL()
+                        .clickTopListsMenu()
+                        .clickTopListEsotericSubmenu()
+                        .getCountTrTags();
+
+        Assert.assertEquals(actualNumberOfLanguages, expectedNumberOfLanguages);
+    }
 }
