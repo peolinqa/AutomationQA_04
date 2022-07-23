@@ -38,7 +38,7 @@ public class TopListRealTest extends BaseTest {
     }
 
     @Test
-    public void testTableHeaderText(){
+    public void testTableHeaderText() {
         final String expectedTableHeaderText = "# Language Author Date Comments Rate";
 
         String actualTableHeaderText =
@@ -51,7 +51,7 @@ public class TopListRealTest extends BaseTest {
     }
 
     @Test
-    public void testFirstThreeLanguagesInTheTable(){
+    public void testFirstThreeLanguagesInTheTable() {
         final List<String> expectedLanguages = List.of(
                 "1. Express Lori Smallwood 04/20/05 0",
                 "2. REBOL Anonymous 04/20/05 1",
@@ -85,5 +85,35 @@ public class TopListRealTest extends BaseTest {
         String newUrl = getDriver().getCurrentUrl();
 
         Assert.assertNotEquals(newUrl, oldUrl);
+    }
+
+    @Test
+    public void testUrlSchemeLanguage() {
+        final String expectedUrl = "http://www.99-bottles-of-beer.net/language-scheme-582.html";
+        final String SchemeLanguage = "Scheme (original version)";
+
+        String actualUrl =
+                openBaseURL()
+                        .clickTopListsMenu()
+                        .clickTopListRealSubmenu()
+                        .clickLanguage(SchemeLanguage)
+                        .getURL();
+
+        Assert.assertEquals(actualUrl, expectedUrl);
+    }
+
+    @Test
+    public void testHeaderTextSchemeLanguage() {
+        final String expectedHeader = "Language Scheme";
+        final String SchemeLanguage = "Scheme (original version)";
+
+        String actualHeader =
+                openBaseURL()
+                        .clickTopListsMenu()
+                        .clickTopListRealSubmenu()
+                        .clickLanguage(SchemeLanguage)
+                        .getH2MainText();
+
+        Assert.assertEquals(actualHeader, expectedHeader);
     }
 }
